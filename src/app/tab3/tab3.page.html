@@ -1,9 +1,30 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab Three
+      Clima
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class="ion-padding">
+
+  {{msg}}
+
+  <ng-container *ngIf="coords != null">
+    <p>
+      Tus coordenadas son: {{coords.lat}},  {{coords.lon}}
+    </p>
+  </ng-container>
+
+  <ng-container *ngIf="weather != null">
+    <hr>
+    <p>
+      Clima: {{weather.data.weather[0]}}
+    </p>
+  
+    <p>
+      Temperatura: {{weather.data.temperature[0]}}
+    </p>
+  </ng-container>
+  
+</ion-content>

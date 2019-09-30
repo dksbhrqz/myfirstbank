@@ -1,5 +1,7 @@
 {
   "name": "MyFirstBank",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

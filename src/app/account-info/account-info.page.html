@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Info de Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="account != null">
+    <ion-item lines="none">
+      <ion-label>
+        <b>Número:</b>  {{account.number}}
+      </ion-label>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label>
+        <b>Tipo:</b> {{account.name}}
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <b>Saldo:</b> $ {{account.money}}
+      </ion-label>
+    </ion-item>  
+  </ion-list>
+
+</ion-content>
