@@ -48,7 +48,7 @@ export class Tab3Page implements OnInit, OnDestroy {
         console.log(err);
         this.msg = JSON.stringify(err);
       } else {
-        this.msg = JSON.stringify(err);
+        this.msg = JSON.stringify(info);
         this.weather = info;
       }
     });

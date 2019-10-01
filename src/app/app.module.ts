@@ -10,7 +10,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -21,6 +21,8 @@ import { DataService } from './services/data.service';
 import { HttpClientModule  } from '@angular/common/http';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { QrPage } from './qr/qr.page';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +31,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    QRCodeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     HttpClientModule,
@@ -38,6 +41,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     StatusBar,
     SplashScreen,
     DataService,
+    BarcodeScanner,
     Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

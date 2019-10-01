@@ -6,4 +6,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class="ion-padding">
+
+  <ion-button expand="block"  (click)="scan()">Escanear</ion-button>
+  <br>
+  <br>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Generar QR</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Cuenta</ion-label>
+        <ion-select [(ngModel)]="selectedAccount">
+          <ion-select-option *ngFor="let account of dataService.accounts" [value]="account">{{account.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-button expand="block" [disabled]="selectedAccount == null" (click)="encodedText()">Aceptar</ion-button>  
+    </ion-card-content>
+
+
+  
+  </ion-card>
+  
+</ion-content>
